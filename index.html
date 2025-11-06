@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processo Seletivo Estágio - Polliana Melo Advocacia</title>
+    <!-- Incluindo Tailwind CSS para um design moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fonte Inter - mais profissional */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilo customizado para os inputs de rádio do DISC */
+        .disc-option:checked + label {
+            background-color: #e0f2fe; /* Azul claro */
+            border-color: #0284c7; /* Azul escuro */
+        }
+        .disc-option:hover + label {
+            border-color: #0284c7;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto max-w-3xl p-6 py-12">
+        
+        <!-- Cabeçalho -->
+        <header class="text-center mb-10">
+            <!-- Imagem de Placeholder: Troque 'seu-logo.png' pelo link do logo do escritório, se tiver -->
+            <img src="https://placehold.co/150x150/0284c7/ffffff?text=P+M" 
+                 alt="Logo Polliana Melo Advocacia" 
+                 class="mx-auto mb-4 w-24 h-24 rounded-full object-cover border-4 border-white shadow-md"
+                 onerror="this.src='https://placehold.co/150x150/0284c7/ffffff?text=PM'; this.onerror=null;">
+            
+            <h1 class="text-3xl font-bold text-gray-900">Polliana Melo Advocacia</h1>
+            <p class="text-xl text-gray-600 mt-2">Vaga de Estágio em Direito Previdenciário</p>
+        </header>
+
+        <!-- Mensagem de Boas-Vindas -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Sobre a Vaga</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Estamos buscando um(a) estudante de Direito proativo(a) e com vontade de aprender para se juntar à nossa equipe especializada em Direito Previdenciário.
+                Esta é uma oportunidade única para atuar diretamente com casos reais, desenvolver habilidades práticas e crescer connosco.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-4">
+                Se você é uma pessoa organizada, detalhista e tem paixão pela área previdenciária, esta vaga pode ser para você!
+            </p>
+        </div>
+
+        <!-- Formulário de Candidatura -->
+        <!-- 
+            IMPORTANTE: 
+            1. Crie uma conta gratuita no https://getform.io/
+            2. Crie um novo formulário (endpoint).
+            3. Copie o link (ex: https://getform.io/f/SEU-HASH-UNICO)
+            4. Cole o link abaixo no atributo 'action'
+        -->
+        <form id="applicationForm" 
+              action="[https://getform.io/f/axozqxkb]" 
+              method="POST" 
+              enctype="multipart/form-data"
+              class="bg-white p-8 rounded-lg shadow-lg space-y-6">
+
+            <!-- Seção 1: Informações Básicas -->
+            <div>
+                <h3 class="text-lg font-medium leading-6 text-gray-900 border-b border-gray-200 pb-2 mb-4">Informações Básicas</h3>
+                
+                <label for="nome" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                <input type="text" name="nome" id="nome" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2">
+                
+                <label for="email" class="block text-sm font-medium text-gray-700 mt-4">Email</label>
+                <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2">
+                
+                <label for="telefone" class="block text-sm font-medium text-gray-700 mt-4">Telefone (com WhatsApp)</label>
+                <input type="tel" name="telefone" id="telefone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2">
+
+                <label for="semestre" class="block text-sm font-medium text-gray-700 mt-4">Semestre/Período Atual</label>
+                <select id="semestre" name="semestre" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 bg-white">
+                    <option value="" disabled selected>Selecione seu semestre</option>
+                    <option value="1-4">1º ao 4º Semestre</option>
+                    <option value="5">5º Semestre</option>
+                    <option value="6">6º Semestre</option>
+                    <option value="7">7º Semestre</option>
+                    <option value="8">8º Semestre</option>
+                    <option value="9">9º Semestre</option>
+                    <option value="10">10º Semestre</option>
+                    <option value="concluido">Já concluí a graduação</option>
+                </select>
+
+                <!-- NOVA PERGUNTA: Turno -->
+                <label for="turno" class="block text-sm font-medium text-gray-700 mt-4">Qual seu turno de estudo?</label>
+                <select id="turno" name="turno" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 bg-white">
+                    <option value="" disabled selected>Selecione seu turno</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                    <option value="ead">EAD/Flexível</option>
+                </select>
+
+                <!-- NOVA PERGUNTA: Disponibilidade Carga Horária -->
+                <label for="carga_horaria" class="block text-sm font-medium text-gray-700 mt-4">Qual sua disponibilidade de carga horária?</label>
+                <select id="carga_horaria" name="carga_horaria" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 bg-white">
+                    <option value="" disabled selected>Selecione a carga horária</option>
+                    <option value="20h">4 horas/dia (20h semanais)</option>
+                    <option value="30h">6 horas/dia (30h semanais)</option>
+                    <option value="outro">Outra (especificar na próxima pergunta)</option>
+                </select>
+
+                <label for="linkedin" class="block text-sm font-medium text-gray-700 mt-4">Link do seu LinkedIn (Opcional)</label>
+                <input type="url" name="linkedin" id="linkedin" placeholder="https://linkedin.com/in/..." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2">
+            </div>
+
+            <!-- Seção 2: Foco em Previdenciário -->
+            <div class="pt-4">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 border-b border-gray-200 pb-2 mb-4">Interesse na Área</h3>
+                
+                <label for="porque_prev" class="block text-sm font-medium text-gray-700">Por que você escolheu (ou tem interesse) no Direito Previdenciário?</label>
+                <textarea id="porque_prev" name="porque_prev" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2"></textarea>
+                
+                <label for="sobre_escritorio" class="block text-sm font-medium text-gray-700 mt-4">O que você sabe sobre a atuação do escritório Polliana Melo Advocacia?</label>
+                <textarea id="sobre_escritorio" name="sobre_escritorio" rows="3" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2"></textarea>
+            
+                <!-- NOVA PERGUNTA: Experiência com Peças -->
+                <label for="exp_pecas" class="block text-sm font-medium text-gray-700 mt-4">Você tem experiência na elaboração de peças processuais (mesmo que em trabalhos acadêmicos)?</label>
+                <textarea id="exp_pecas" name="exp_pecas" rows="3" placeholder="Ex: Petição inicial, contestação, recursos..." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2"></textarea>
+
+                <!-- NOVA PERGUNTA: Experiência com Sistemas -->
+                <label for="exp_sistemas" class="block text-sm font-medium text-gray-700 mt-4">Você já utilizou algum sistema de processo eletrônico ou portal do governo?</label>
+                <textarea id="exp_sistemas" name="exp_sistemas" rows="3" placeholder="Ex: PJe, E-proc, E-saj, Meu INSS, INSS Digital..." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2"></textarea>
+            </div>
+
+            <!-- Seção 3: Perfil Comportamental (Mini-DISC) -->
+            <div class="pt-4">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 border-b border-gray-200 pb-2 mb-4">Sobre seu Perfil</h3>
+                <p class="text-sm text-gray-600 mb-4">Não há respostas 'certas' ou 'erradas'. Responda com base no que mais se aproxima de você.</p>
+                
+                <!-- Pergunta 1 -->
+                <fieldset class="mt-4 disc-question">
+                    <legend class="text-sm font-medium text-gray-700 mb-2">1. Quando trabalho em equipe, eu geralmente...</legend>
+                    <div class="space-y-2">
+                        <div class="relative flex items-start">
+                            <input id="q1d" name="q1" type="radio" value="D" class="hidden disc-option"><label for="q1d" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all">Foco no resultado e em fazer acontecer rápido.</label>
+                        </div>
+                        <div class="relative flex items-start">
+                            <input id="q1i" name="q1" type="radio" value="I" class="hidden disc-option"><label for="q1i" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all">Gosto de interagir, motivar e persuadir os colegas.</label>
+                        </div>
+                        <div class="relative flex items-start">
+                            <input id="q1s" name="q1" type="radio" value="S" class="hidden disc-option"><label for="q1s" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all">Prefiro ajudar, ouvir e garantir que o ambiente esteja harmonioso.</label>
+                        </div>
+                        <div class="relative flex items-start">
+                            <input id="q1c" name="q1" type="radio" value="C" class="hidden disc-option"><label for="q1c" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all">Gosto de analisar os detalhes, organizar e garantir que tudo esteja correto.</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Pergunta 2 -->
+                <fieldset class="mt-4 disc-question">
+                    <legend class="text-sm font-medium text-gray-700 mb-2">2. No meu dia a dia, eu me considero uma pessoa mais...</legend>
+                    <div class="space-y-2">
+                        <input id="q2d" name="q2" type="radio" value="D" class="hidden disc-option"><label for="q2d" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Direta e assertiva.</label>
+                        <input id="q2i" name="q2" type="radio" value="I" class="hidden disc-option"><label for="q2i" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Comunicativa e otimista.</label>
+                        <input id="q2s" name="q2" type="radio" value="S" class="hidden disc-option"><label for="q2s" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Calma e paciente.</label>
+                        <input id="q2c" name="q2" type="radio" value="C" class="hidden disc-option"><label for="q2c" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Cuidadosa e analítica.</label>
+                    </div>
+                </fieldset>
+
+                <!-- Pergunta 3 -->
+                <fieldset class="mt-4 disc-question">
+                    <legend class="text-sm font-medium text-gray-700 mb-2">3. Eu prefiro um ambiente de trabalho que seja...</legend>
+                    <div class="space-y-2">
+                        <input id="q3d" name="q3" type="radio" value="D" class="hidden disc-option"><label for="q3d" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Desafiador e focado em metas.</label>
+                        <input id="q3i" name="q3" type="radio" value="I" class="hidden disc-option"><label for="q3i" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Social e colaborativo.</label>
+                        <input id="q3s" name="q3" type="radio" value="S" class="hidden disc-option"><label for="q3s" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Estável e previsível.</label>
+                        <input id="q3c" name="q3" type="radio" value="C" class="hidden disc-option"><label for="q3c" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Organizado e com regras claras.</label>
+                    </div>
+                </fieldset>
+
+                <!-- Pergunta 4 -->
+                <fieldset class="mt-4 disc-question">
+                    <legend class="text-sm font-medium text-gray-700 mb-2">4. Sob pressão, a minha tendência é...</legend>
+                    <div class="space-y-2">
+                        <input id="q4d" name="q4" type="radio" value="D" class="hidden disc-option"><label for="q4d" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Assumir o controle e tomar decisões rápidas.</label>
+                        <input id="q4i" name="q4" type="radio" value="I" class="hidden disc-option"><label for="q4i" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Tentar aliviar a tensão e conversar.</label>
+                        <input id="q4s" name="q4" type="radio" value="S" class="hidden disc-option"><label for="q4s" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Manter a calma e buscar apoio.</label>
+                        <input id="q4c" name="q4" type="radio" value="C" class="hidden disc-option"><label for="q4c" class="flex-1 p-3 border border-gray-300 rounded-md cursor-pointer transition-all block">Focar nos procedimentos e checar os fatos.</label>
+                    </div>
+                </fieldset>
+
+                <!-- Campo oculto para enviar o resultado do DISC -->
+                <input type="hidden" name="perfil_comportamental_dominante" id="perfil_comportamental_dominante">
+            </div>
+            
+            <!-- Seção 4: Anexos -->
+            <div class="pt-4">
+                <h3 class="text-lg font-medium leading-6 text-gray-900 border-b border-gray-200 pb-2 mb-4">Currículo</h3>
+                
+                <label for="curriculo" class="block text-sm font-medium text-gray-700">Anexe seu currículo (PDF ou DOCX)</label>
+                <input type="file" name="curriculo" id="curriculo" required 
+                       class="mt-1 block w-full text-sm text-gray-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-md file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-blue-50 file:text-blue-700
+                              hover:file:bg-blue-100">
+            </div>
+
+            <!-- Envio -->
+            <div classid="message-area" class="mt-4">
+                <!-- Mensagens de erro ou sucesso aparecerão aqui -->
+            </div>
+            <div class="pt-6">
+                <button type="submit" 
+                        id="submitButton"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all">
+                    Enviar Candidatura
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script para calcular o Mini-DISC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('applicationForm');
+            const hiddenProfileInput = document.getElementById('perfil_comportamental_dominante');
+            
+            // Função para calcular o perfil dominante
+            function calculateProfile() {
+                const profiles = { D: 0, I: 0, S: 0, C: 0 };
+                const questions = document.querySelectorAll('.disc-question');
+                
+                questions.forEach((question) => {
+                    const checkedOption = question.querySelector('input[type="radio"]:checked');
+                    if (checkedOption) {
+                        profiles[checkedOption.value]++;
+                    }
+                });
+
+                // Encontra o perfil com mais pontos
+                let dominantProfile = 'Nenhum';
+                let maxCount = 0;
+                for (const profile in profiles) {
+                    if (profiles[profile] > maxCount) {
+                        maxCount = profiles[profile];
+                        dominantProfile = profile;
+                    }
+                }
+                
+                // Mapeia a letra para o nome completo
+                const profileNames = {
+                    D: 'Dominância (Foco em Resultados)',
+                    I: 'Influência (Foco em Pessoas/Comunicação)',
+                    S: 'Estabilidade (Foco em Harmonia/Paciência)',
+                    C: 'Conformidade (Foco em Detalhes/Regras)'
+                };
+
+                // Atualiza o valor do campo oculto
+                hiddenProfileInput.value = profileNames[dominantProfile] || 'Não preenchido';
+            }
+
+            // Calcula o perfil sempre que uma opção for alterada
+            form.addEventListener('change', (event) => {
+                if (event.target.type === 'radio' && event.target.name.startsWith('q')) {
+                    calculateProfile();
+                }
+            });
+
+            // Opcional: Feedback de envio
+            form.addEventListener('submit', () => {
+                const submitButton = document.getElementById('submitButton');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando, por favor aguarde...';
+                
+                // O Getform redireciona para uma página de "obrigado" automaticamente.
+            });
+        });
+    </script>
+</body>
+</html>
